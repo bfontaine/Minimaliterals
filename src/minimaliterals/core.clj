@@ -10,3 +10,8 @@
   "string litteral, e.g.: (%q a b c) => \"a b c\""
   [& els]
   `(cs/join " " '~els))
+
+(defmacro %r
+  "regexp litteral, e.g.: (%r fo+ .*) => #\"fo+ .*\""
+  [& els]
+  `(re-pattern (cs/join " " '~els)))

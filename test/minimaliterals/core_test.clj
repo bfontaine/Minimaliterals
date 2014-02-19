@@ -21,3 +21,13 @@
     (is (= "a b c" (%q a b c))))
   (testing "non-letters"
     (is (= "1 + 1 = 2" (%q 1 + 1 = 2)))))
+
+;; FIXME: we need a way to compare two regexps, see:
+;;   http://stackoverflow.com/q/21894371/735926
+(deftest percent-r-test
+  (testing "empty list"
+    (is (= "" (str (%r)))))
+  (testing "one arg"
+    (is (= "fo+" (str (%r fo+)))))
+  (testing "multiple args"
+    (is (= "a? b+ ?" (str (%r a? b+ ?))))))
