@@ -1,5 +1,8 @@
 # minimaliterals
 
+[![Build Status](https://travis-ci.org/bfontaine/Minimaliterals.png)](https://travis-ci.org/bfontaine/Minimaliterals)
+[![Coverage Status](https://coveralls.io/repos/bfontaine/Minimaliterals/badge.png)](https://coveralls.io/r/bfontaine/Minimaliterals)
+
 **minimaliterals** is an experimental library which brings Ruby-like %-literals
 to Clojure. This is only for fun with macros, use it at your own risk!
 
