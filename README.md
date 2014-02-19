@@ -11,7 +11,6 @@ The array below summarizes the syntax:
 | `%q[foo bar]` | `(%q foo bar)` | `"foo bar"`      |
 | `%r[fo+]`     | `(%r fo+)`     | `#"fo+"`         |
 | `%i[foo bar]` | `(%i foo bar)` | `'(:foo :bar)`   |
-| `%x[echo yo]` | `(%x echo yo)` | `"yo\n"`         |
 
 Due to the use of `%`, using these macros in short-form anonymous functions
 won’t work.
