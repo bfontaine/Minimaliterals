@@ -15,3 +15,9 @@
   "regexp litteral, e.g.: (%r fo+ .*) => #\"fo+ .*\""
   [& els]
   `(re-pattern (cs/join " " '~els)))
+
+(defmacro %i
+  "keywords list litteral, e.g.: (%i foo bar qux) => '(:foo :bar :qux)"
+  [& els]
+  ;; we need to use this because (keyword '1) is nil
+  `(map #(keyword (str %)) '~els))

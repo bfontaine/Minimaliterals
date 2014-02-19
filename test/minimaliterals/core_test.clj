@@ -31,3 +31,13 @@
     (is (= "fo+" (str (%r fo+)))))
   (testing "multiple args"
     (is (= "a? b+ ?" (str (%r a? b+ ?))))))
+
+(deftest percent-i-test
+  (testing "empty list"
+    (is (= '() (%i))))
+  (testing "one arg"
+    (is (= '(:foo) (%i foo))))
+  (testing "multiple args"
+    (is (= '(:a :b :c) (%i a b c))))
+  (testing "non-letters"
+    (is (= '(:1 :+ :1 := :2) (%i 1 + 1 = 2)))))
