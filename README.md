@@ -17,7 +17,23 @@ won’t work.
 
 ## Usage
 
-FIXME
+Add it as a dependency:
+
+```clj
+[minimaliterals "0.1.0"]
+```
+
+Then use it:
+
+```clj
+(ns your-namespace
+  ; ...
+  (:use minimaliterals.core))
+
+; ...
+
+(def names (%w henry james jayne))
+```
 
 Note: no interpolation is done, this means that the following code
 

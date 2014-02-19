@@ -1,4 +1,4 @@
-(defproject minimaliterals "0.1.0-SNAPSHOT"
+(defproject minimaliterals "0.1.0"
   :description "Ruby-like %-litterals"
   :url "http://github.com/bfontaine/Minimaliterals"
   :license {:name "Eclipse Public License"
