@@ -3,10 +3,13 @@
 [![Build Status](https://travis-ci.org/bfontaine/Minimaliterals.png)](https://travis-ci.org/bfontaine/Minimaliterals)
 [![Coverage Status](https://coveralls.io/repos/bfontaine/Minimaliterals/badge.png)](https://coveralls.io/r/bfontaine/Minimaliterals)
 
-**minimaliterals** is an experimental library which brings Ruby-like %-literals
-to Clojure. This is only for fun with macros, use it at your own risk!
+**minimaliterals** is an experimental library which brings Ruby-like
+[`%`-literals][1] to Clojure. This is only for fun with macros, use it at your
+own risk!
 
-The array below summarizes the syntax:
+[1]: https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation
+
+The table below summarizes the syntax:
 
 | Ruby          | Clojure        | Result           |
 |---------------|----------------|------------------|
@@ -16,7 +19,7 @@ The array below summarizes the syntax:
 | `%i[foo bar]` | `(%i foo bar)` | `'(:foo :bar)`   |
 
 Due to the use of `%`, using these macros in short-form anonymous functions
-won’t work.
+won’t work (e.g. `#(identity (%w a b c))` will throw an error at compile-time).
 
 ## Usage
 
@@ -38,7 +41,9 @@ Then use it:
 (def names (%w henry james jayne))
 ```
 
-Note: no interpolation is done, this means that the following code
+## Caveats
+
+No interpolation is done, this means that the following code:
 
 ```clj
 (let [x "yo"]
