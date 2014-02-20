@@ -14,10 +14,10 @@
 (defmacro %r
   "regexp litteral, e.g.: (%r fo+ .*) => #\"fo+ .*\""
   [& els]
-  `(re-pattern (cs/join " " '~els)))
+  `(re-pattern (%q ~@els)))
 
 (defmacro %i
   "keywords list litteral, e.g.: (%i foo bar qux) => '(:foo :bar :qux)"
   [& els]
-  ;; we need to use this because (keyword '1) is nil
-  `(map #(keyword (str %)) '~els))
+  ;; we need to first transform to string because (keyword '1) is nil
+  `(map keyword (%w ~@els)))
