@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/bfontaine/Minimaliterals/badge.png)](https://coveralls.io/r/bfontaine/Minimaliterals)
 
 **minimaliterals** is an experimental library which brings Ruby-like
-[`%`-literals][1] to Clojure. This is only for fun with macros, use it at your
+[%-literals][1] to Clojure. This is only for fun with macros, use it at your
 own risk!
 
 [1]: https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation
@@ -15,7 +15,7 @@ The table below summarizes the syntax:
 |---------------|----------------|------------------|
 | `%w[foo bar]` | `(%w foo bar)` | `'("foo" "bar")` |
 | `%q[foo bar]` | `(%q foo bar)` | `"foo bar"`      |
-| `%r[fo+]`     | `(%r fo+)`     | `#"fo+"`         |
+| `%r[fo+ ?]`   | `(%r fo+ ?)`   | `#"fo+ ?"`       |
 | `%i[foo bar]` | `(%i foo bar)` | `'(:foo :bar)`   |
 
 Due to the use of `%`, using these macros in short-form anonymous functions
