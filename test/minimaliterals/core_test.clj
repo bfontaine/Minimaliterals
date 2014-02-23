@@ -10,7 +10,11 @@
   (testing "multiple args"
     (is (= '("a" "b" "c") (%w a b c))))
   (testing "non-letters"
-    (is (= '("1" "+" "1" "=" "2") (%w 1 + 1 = 2)))))
+    (is (= '("1" "+" "1" "=" "2") (%w 1 + 1 = 2))))
+  (testing "nil"
+    (is (= '("nil") (%w nil))))
+  (testing "nested parentheses"
+    (is (= '("(here are parentheses)") (%w (here are parentheses))))))
 
 (deftest percent-q-test
   (testing "empty list"
@@ -22,15 +26,15 @@
   (testing "non-letters"
     (is (= "1 + 1 = 2" (%q 1 + 1 = 2)))))
 
-;; FIXME: we need a way to compare two regexps, see:
-;;   http://stackoverflow.com/q/21894371/735926
 (deftest percent-r-test
   (testing "empty list"
     (is (= "" (str (%r)))))
   (testing "one arg"
     (is (= "fo+" (str (%r fo+)))))
   (testing "multiple args"
-    (is (= "a? b+ ?" (str (%r a? b+ ?))))))
+    (is (= "a? b+ ?" (str (%r a? b+ ?)))))
+  (testing "nested parentheses"
+    (is (= "(?:xo)" (str (%r (?:xo)))))))
 
 (deftest percent-i-test
   (testing "empty list"
