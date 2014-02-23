@@ -4,7 +4,7 @@
 (defmacro %w
   "strings list litteral, e.g.: (%w a b c) => '(\"a\" \"b\" \"c\")"
   [& els]
-  `(map str '~els))
+  `(map (fn [x#] (if (nil? x#) "nil" (str x#))) '~els))
 
 (defmacro %q
   "string litteral, e.g.: (%q a b c) => \"a b c\""
